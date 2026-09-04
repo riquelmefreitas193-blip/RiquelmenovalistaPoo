@@ -1,43 +1,27 @@
-// 3. Classe Retângulo: Crie uma classe que modele um retângulo:
-// A. Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
-// B. Métodos:
-//  Mudar valor dos lados,
-//  Retornar valor dos lados,
-//  Calcular Área,
-//  Calcular Perímetro.
- 
-export function exercicio1(): void{
-    class Retangulo{
-        ladoA:number
-        ladoB:number
+// 1. Classe Bola: Crie uma classe que modele uma bola:
+//  Atributos: Cor, circunferência, material
+    //  Métodos: trocaCor e mostraCor
+export function exercicio1():void{
+    class Bola{
+        cor:string
+        circuferencia:number
+        material:string
 
-        constructor(A:number, B:number){
+        constructor(cor:string, circu:number, mate:string){
 
-            this.ladoA = A
-            this.ladoB = B
+            this.cor = cor
+            this.circuferencia = circu
+            this.material = mate
         }
-
-    mudarLado(novoLadoA:number, novoLadoB:number):void{
-            this.ladoA = novoLadoA
-            this.ladoB = novoLadoB
+        trocarCor(novaCor:string){
+            this.cor = novaCor
+        }
+        mostrarCor(){
+            console.log("A cor da bola agora é: "+ this.cor)
+        }
     }
-        retorna(ladoA:number, ladoB:number){
-            console.log(`O lado A è: ${ladoA}`)
-            console.log(`O lado B è: ${ladoB}`)
-        }
-
-        calcularArea():number {
-            return this.ladoA * this.ladoA;
-        }
-        calcularPerimentro():number {
-            return 2 * (this.ladoA + this.ladoB)
-        }
-        exibir():void{
-            
-        }
-        
-    }   
-
-    let novoRetangulo = new Retangulo(5, 8);
-
+    let bola = new Bola("vermelho", 50, "couro")
+    bola.mostrarCor()
+    bola.trocarCor("Preto")
+    bola.mostrarCor()
 }
