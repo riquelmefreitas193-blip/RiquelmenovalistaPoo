@@ -2,3 +2,36 @@
 // local. Depois, deve criar um objeto com as medidas e calcular a quantidade de pisos e de rodapés
 // necessárias para o local.
 
+class Local {
+    largura: number
+    comprimento: number
+
+    constructor(larg: number, comp: number) {
+        this.largura = larg 
+        this.comprimento = comp
+    }
+    caucularArea():number{
+        return this.largura * this.comprimento
+    }
+    calcularPiso(larguraPiso: number, comprimentroPiso: number): number{
+        let areaPiso = larguraPiso * comprimentroPiso
+        return this.caucularArea() / areaPiso
+    }
+    calcularRodapes(tamanhoRoapes: number): number{
+        let perimetro = (this.largura + this.comprimento) * 2
+        return perimetro / tamanhoRoapes
+    }
+}
+let largura = Number(prompt("Digite a largura do local: "))
+let comprimento = Number(prompt("Digite o comprimentro do local: "))
+
+let local = new Local(largura, comprimento)
+
+let larguraPiso = Number(prompt("Digite a largura do piso: "))
+let comprimentroPiso = Number(prompt("Digte o comprimento do piso: "))
+
+let tamanhoRoapes = Number(prompt("Digite o tamanho do rodapes: "))
+
+let area = local.caucularArea()
+let calcularPiso = local.calcularPiso(larguraPiso, comprimentoPiso)
+let calcularRodapes = local.calcularRodapes(tamanhoRodapes)
