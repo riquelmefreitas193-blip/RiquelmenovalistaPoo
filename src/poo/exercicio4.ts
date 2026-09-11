@@ -28,10 +28,14 @@ let comprimento = Number(prompt("Digite o comprimentro do local: "))
 let local = new Local(largura, comprimento)
 
 let larguraPiso = Number(prompt("Digite a largura do piso: "))
-let comprimentroPiso = Number(prompt("Digte o comprimento do piso: "))
+let comprimentoPiso = Number(prompt("Digte o comprimento do piso: "))
 
-let tamanhoRoapes = Number(prompt("Digite o tamanho do rodapes: "))
+let tamanhoRodapes = Number(prompt("Digite o tamanho do rodapes: "))
 
 let area = local.caucularArea()
-let calcularPiso = local.calcularPiso(larguraPiso, comprimentoPiso)
-let calcularRodapes = local.calcularRodapes(tamanhoRodapes)
+let quantidadePiso = local.calcularPiso(larguraPiso, comprimentoPiso)
+let quantidadeRodapes = local.calcularRodapes(tamanhoRodapes)
+
+console.log("Área do local: " + area)
+console.log("Quantidade de pisos: " + quantidadePiso)
+console.log("Quantidade de rodapés: " + quantidadeRodapes)
