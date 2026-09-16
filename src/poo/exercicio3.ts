@@ -50,7 +50,4 @@ console.log(retangulo.retornaLado())
 console.log(retangulo.calcularArea())
 console.log(retangulo.calcularPerimetro())
 
-
-
-
 }
