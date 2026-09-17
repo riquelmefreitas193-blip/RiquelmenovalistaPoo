@@ -3,38 +3,48 @@
 // alterarNome, depósito e saque. No construtor, saldo é opcional, com valor default zero e os demais
 // atributos são obrigatórios. Por fim, faça com que esse sistema interaja com o usuário permitido que
 // ele, depois de cadastrar as suas informações, possa usar os métodos disponíveis.
-
+export function exercicio6(){
 class Corrente{
-    numerosConta: number
-    nomeCorrentista: string
-    saldo: number
+    private _numerosConta: number
+   private _nomeCorrentista: string
+    private _saldo: number = 0
 
-    constructor(numeroC: number, nomeC: string, sa: number){
-        this.numerosConta = numeroC
-        this.nomeCorrentista = nomeC
-        this.saldo = sa
+    constructor(numeroC: number, nomeC: string){
+        this._numerosConta = numeroC
+        this._nomeCorrentista = nomeC
+
     }
     
-    nome(novoNome: string){
-        this.nomeCorrentista = novoNome
+    set nome(novoNome: string){
+        this._nomeCorrentista = novoNome
+    }
+    get saldo(){
+        return this._saldo
     }
     deposito(novoDepodito: number){
-        this.saldo += novoDepodito
-        return this.saldo
+        this._saldo += novoDepodito
+        return this._saldo
     }
     saque(novoSaque: number): number{
-        if (novoSaque <= this.saldo){
-            this.saldo -=novoSaque
+        if (novoSaque <= this._saldo){
+            this._saldo -=novoSaque
         }else{
-            console.log("Saldo insuficiente")
+            alert("Saldo insuficiente")
     }
-    return this.saldo
+    return this._saldo
 }
 
 }
-            
-    
+
+let nome = prompt("Informe seu nome: ") || ""
+let numerosConta:number = Number (prompt("Informe o número da conta: "))
 
 
+let corrente = new Corrente(numerosConta, nome)
 
+corrente.deposito(10)
+alert(corrente.saldo)
+corrente.saque(9)
+alert(corrente.saldo)
 
+}
