@@ -1,0 +1,20 @@
+// //  9. Uma loja deseja controlar seu estoque de produtos. O sistema deve pedir ao usuário o nome do
+//   produto, o preço e a quantidade em estoque. Cada produto deve ser representado por um objeto. Crie
+//  um método que calcule o valor total em estoque (preço × quantidade) e exiba essa informação para
+//   cada produto.
+
+
+class Produtos {
+  nomeProduto: string
+  preco: number
+  quantidade: number
+
+  constructor(no: string, pre: number, quant: number){
+    this.nomeProduto = no
+    this.preco = pre
+    this.quantidade = quant
+  }
+  qualcularValorEstoque(): number{
+    return this.preco * this.quantidade
+  }
+}
